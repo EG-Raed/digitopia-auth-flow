@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitopia Auth Flow</title>
+  <link rel="stylesheet" href="styled.css">
+  <script defer src="scriptd.js"></script>
+</head>
+<body>
+  <main class="page">
+    <!-- Registration Section -->
+    <section id="registrationSection" class="card show">
+      <div class="logo-space">
+        <!-- Place your logo here -->
+        <!-- Example: <img src="logo.png" alt="Logo placeholder" /> -->
+      </div>
+      <h1 class="title">Registration</h1>
+      <div class="banner" id="regBanner" aria-live="polite"></div>
+      <form id="registrationForm" novalidate>
+        <div class="field">
+          <label for="regUsername">Username</label>
+          <input id="regUsername" name="username" type="text" autocomplete="username"
+                placeholder="Enter username" required >
+        </div>
+        <div class="field">
+          <label for="regPassword">Password</label>
+          <input id="regPassword" name="password" type="password" autocomplete="new-password"
+                placeholder="Enter password" required >
+        </div>
+        <button id="registerBtn" class="btn primary" type="submit">Register</button>
+      </form>
+      <button id="proceedToLogin" class="btn secondary hidden" type="button">Proceed to Login</button>
+    </section>
+
+    <!-- Login Section -->
+    <section id="loginSection" class="card hidden">
+      <div class="logo-space" aria-live="Logo placeholder">
+        <!-- Place your logo here -->
+      </div>
+      <h1 class="title">Login</h1>
+      <div class="banner" id="loginBanner" aria-live="polite"></div>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginUsername">Username</label>
+          <input id="loginUsername" name="username" type="text" autocomplete="username"
+                placeholder="Enter username" required >
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password"
+                placeholder="Enter password" required >
+        </div>
+        <button class="btn primary" type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- MFA Section -->
+    <section id="mfaSection" class="card hidden">
+      <div class="logo-space" aria-live="Logo placeholder">
+        <!-- Place your logo here -->
+      </div>
+      <h1 class="title">MFA Verification</h1>
+      <div class="banner" id="mfaBanner" aria-live="polite"></div>
+
+      <div class="mfa-instructions">
+        <p class="lead">Enter the OTP sent to you:</p>
+        <div class="otp-visual">
+          <span>Your OTP:</span>
+          <strong id="visibleOtp">------</strong>
+        </div>
+        <div class="otp-meta">
+          <div class="timer">
+            <span class="label">Time remaining:</span>
+            <span id="countdown">00:30</span>
+          </div>
+          <div class="attempts">
+            <span class="label">Attempts remaining:</span>
+            <span id="attemptsLeft">3</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="otpForm" novalidate>
+        <div class="field">
+          <label for="otpInput">6-digit OTP</label>
+          <input id="otpInput" type="text" inputmode="numeric" autocomplete="one-time-code"
+                maxlength="6" pattern="[0-9]{6}" placeholder="Enter 6-digit code" required >
+        </div>
+        <div class="actions">
+          <button id="verifyOtpBtn" class="btn primary" type="submit">Verify OTP</button>
+          <button id="resendOtpBtn" class="btn ghost" type="button">Resend OTP</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
