@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,41 @@
   <link rel="stylesheet" href="styled.css">
   <script defer src="scriptd.js"></script>
 </head>
+
 <body>
   <main class="page">
     <!-- Registration Section -->
     <section id="registrationSection" class="card show">
       <div class="logo-space">
-        <!-- Place your logo here -->
-        <!-- Example: <img src="logo.png" alt="Logo placeholder" /> -->
+        <svg width="80" height="80" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#00b0ff" stroke-width="2">
+            <animate attributeName="r" from="45" to="48" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" from="1" to="0.3" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#2196f3" stroke-width="2">
+            <animate attributeName="r" from="35" to="38" dur="2s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="#1565c0" stroke-width="2">
+            <animate attributeName="r" from="25" to="28" dur="2s" repeatCount="indefinite" begin="1s" />
+          </circle>
+        </svg>
       </div>
       <h1 class="title">Registration</h1>
       <div class="banner" id="regBanner" aria-live="polite"></div>
       <form id="registrationForm" novalidate>
         <div class="field">
           <label for="regUsername">Username</label>
-          <input id="regUsername" name="username" type="text" autocomplete="username"
-                placeholder="Enter username" required >
+          <input id="regUsername" name="username" type="text" autocomplete="username" placeholder="Enter username"
+            required>
         </div>
         <div class="field">
           <label for="regPassword">Password</label>
           <input id="regPassword" name="password" type="password" autocomplete="new-password"
-                placeholder="Enter password" required >
+            placeholder="Enter password" required>
         </div>
         <button id="registerBtn" class="btn primary" type="submit">Register</button>
       </form>
-      <button id="proceedToLogin" class="btn secondary hidden" type="button">Proceed to Login</button>
+      <button id="proceedToLogin" class="btn secondary hidden" type="button">Login</button>
     </section>
 
     <!-- Login Section -->
@@ -43,13 +55,13 @@
       <form id="loginForm" novalidate>
         <div class="field">
           <label for="loginUsername">Username</label>
-          <input id="loginUsername" name="username" type="text" autocomplete="username"
-                placeholder="Enter username" required >
+          <input id="loginUsername" name="username" type="text" autocomplete="username" placeholder="Enter username"
+            required>
         </div>
         <div class="field">
           <label for="loginPassword">Password</label>
           <input id="loginPassword" name="password" type="password" autocomplete="current-password"
-                placeholder="Enter password" required >
+            placeholder="Enter password" required>
         </div>
         <button class="btn primary" type="submit">Login</button>
       </form>
@@ -84,8 +96,8 @@
       <form id="otpForm" novalidate>
         <div class="field">
           <label for="otpInput">6-digit OTP</label>
-          <input id="otpInput" type="text" inputmode="numeric" autocomplete="one-time-code"
-                maxlength="6" pattern="[0-9]{6}" placeholder="Enter 6-digit code" required >
+          <input id="otpInput" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6"
+            pattern="[0-9]{6}" placeholder="Enter 6-digit code" required>
         </div>
         <div class="actions">
           <button id="verifyOtpBtn" class="btn primary" type="submit">Verify OTP</button>
@@ -95,4 +107,5 @@
     </section>
   </main>
 </body>
+
 </html>
